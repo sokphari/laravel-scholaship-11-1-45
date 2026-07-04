@@ -71,7 +71,7 @@ include '../config.php';
                                 <td>' . $row['address'] . '</td>
                                 <td>' . $row['is_active'] . '</td>
                                 <td>
-                                    <button class="btn btn-warning">EDIT</button>
+                                    <a href="edit.php?cus_id='.$row['cus_id'].'" class="btn btn-warning">EDIT</a>
                                     <a href="delete.php?cus_id=' . $row['cus_id'] . '" onclick="return confirm(\'Are you sure?\')" class="btn btn-danger">DELETE</a>
                                 </td>
                             </tr>
