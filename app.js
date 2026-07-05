@@ -5,6 +5,8 @@
     
 // })
 $(document).ready(function(){
+    // call funciton loaduser
+    loadUser()
 
     //create function save data 
     $("#save").click(function(){
@@ -33,10 +35,21 @@ $(document).ready(function(){
             },
             success: function (response) {
                 alert(response)
+                $("#exampleModal").modal("hide") // bootstrap 5
+                loadUser()
             }
         });
-     })
+    })
 
-
+    // function loadUser
+    function loadUser(){
+        $.ajax({
+            type: "GET",
+            url: "fetch.php",
+            success: function (response) {
+                $("#TableUser").html(response)
+            }
+        });
+    }
 
 })
