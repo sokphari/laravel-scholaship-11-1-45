@@ -342,7 +342,7 @@
                 </div>
                 <div class="modal-body">
                     <form>
-                        <input type="hidden" id="id">
+                        <input type="hidden" id="id" name="id">
                         
                         <!-- Full Name Field -->
                         <div class="input-group-custom">

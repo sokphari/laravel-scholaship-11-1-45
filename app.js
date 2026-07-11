@@ -52,4 +52,20 @@ $(document).ready(function(){
         });
     }
 
+    $(document).on("click",".btn-delete",function(){
+        let id = $(this).data("id");
+        // console.log(id)
+        $.ajax({
+            type: "GET",
+            url: "delete.php",
+            data: {
+                id:id
+            },
+            success: function (response) {
+                alert(response)
+                loadUser()
+            }
+        });
+    })
+
 })

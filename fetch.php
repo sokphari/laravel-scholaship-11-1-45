@@ -15,10 +15,10 @@
                     <td>'.$row['address'].'</td>
                     <td>'.$row['phone'].'</td>
                     <td>
-                        <button class="btn-action btn-edit" title="Edit"><i class="bx bx-edit-alt"></i></button>
-                        <button class="btn-action btn-delete" title="Delete"><i class="bx bx-trash"></i></button>
+                        <button class="btn btn-primary btn-edit text-light" title="Edit">Edit</button>
+                        <button class="btn btn-danger text-light btn-delete" data-id="'.$row['id'].'"  title="Delete">Delete</button>
                     </td>
-                </tr>
+            </tr>
         ';
     }
 
