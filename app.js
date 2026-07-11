@@ -68,4 +68,24 @@ $(document).ready(function(){
         });
     })
 
+    $(document).on("click",'.btn-edit',function(){
+        $("#exampleModal").modal("show"); //open modal
+        $("#exampleModalLabel").text("Edit User");
+
+        $("#save").text("update")
+
+        let name = $(this).data("name");
+        let gender = $(this).data("gender");
+        let address = $(this).data("address");
+        let phone = $(this).data("phone");
+        console.log(name)
+
+        $("#name").val(name)
+        $("#gender").val(gender)
+        $("#address").val(address)
+        $("#phone").val(phone)
+
+
+    })
+
 })

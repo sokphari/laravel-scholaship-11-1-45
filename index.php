@@ -332,7 +332,7 @@
         </table>
     </div>
     <!-- Modal -->
-   <!-- Refactored Cool Modal -->
+    <!-- Refactored Cool Modal -->
     <div class="modal fade cool-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered"> <!-- Centered it for a nicer display -->
             <div class="modal-content">
@@ -354,9 +354,9 @@
                         <div class="input-group-custom">
                             <select id="gender" class="form-select" required>
                                 <option value="" disabled selected hidden>Select Gender</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Other">Other</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
                             </select>
                             <i class="fa-solid fa-venus-mars"></i>
                         </div>
