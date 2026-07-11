@@ -310,7 +310,7 @@
         <!-- Your HTML Component with Custom Styles Applied -->
         <div class="d-flex justify-content-between header-section">
             <h1 class="fs-2 cool-title m-0">List User</h1>
-            <button class="btn btn-primary text-white px-4 py-2 btn-add-user" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button id="btnAddUser" class="btn btn-primary text-white px-4 py-2 btn-add-user" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <i class="fa-solid fa-user-plus"></i> Add User
             </button>
         </div>

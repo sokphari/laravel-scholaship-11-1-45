@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `register` (
-  `id` int(4) auth,
+  `id` int(4) auto_increment primary key,
   `name` varchar(30) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `profile` varchar(255) DEFAULT NULL,
