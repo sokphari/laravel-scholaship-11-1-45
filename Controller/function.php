@@ -69,7 +69,7 @@
             header('Location: ../auth/FormLogin.php');
         }
 
-        //60 * 60 = 3600s
+        //60 * 60 = 3600
 
 
     }
