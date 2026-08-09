@@ -44,11 +44,14 @@ class AuthController extends Controller
                 'password' => 'required|string',
             ]);
 
-            
             $remember = $request->boolean('remember');
-            
+
             if (Auth::attempt(['email' => $validated['email'], 'password' => $validated['password'], 'status' => true], $remember)) {
-                return redirect()->route('dashboard')->with('success', 'Login successful');
+                $redirect = match (Auth::user()->role) {
+                    'admin', 'cashier' => 'dashboard',
+                    default => 'user.dashboard',
+                };
+                return redirect()->route($redirect)->with('success', 'Login successful');
             }
 
             return back()->withErrors(['email' => 'These credentials do not match our records.'])->onlyInput('email');
@@ -58,8 +61,8 @@ class AuthController extends Controller
     }
     public function logout(Request $request){
         Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+        $request->session()->invalidate(); //@csrf REGISTER , LOGINT
+        $request->session()->regenerateToken(); // SESSION_ID
         return redirect()->route('login');
     }
     public function profile(){}
