@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api fetch by Ai</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+    <style>
+        .form{
+            width: 500px;
+            height: 700px;
+            padding: 20px;
+        }
+    </style>
+<body>
+    <div class="container px-5 d-flex justify-content-center">
+        <h2 class="text-center my-3">Welcome Back !</h2>
+        <!-- form -->
+        <div class="form py-5">
+            <form id="formSubmit" class="px-5 py-5 shadow">
+                <div class="form-group mb-3">
+                    <input class="form-control" type="text" id="name" placeholder="Enter FullName">
+                </div>
+                <div class="form-group mb-3">
+                    <input class="form-control" type="email" id="email" placeholder="Enter Email">
+                </div>
+                <div class="form-group mb-3">
+                    <input class="form-control" type="password" id="password" placeholder="password">
+                </div>
+                <div class="form-group mb-3">
+                    <select id="role" class="form-control">
+                        <option value="admin">Admin</option>
+                        <option value="hr">Hr</option>
+                        <option value="employee">Employee</option>
+                    </select>
+                </div>
+                <div class="form-group mb-3">
+                    <select id="status" class="form-control">
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                </div>
+                <button type="submit" id="saveBtn" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>role</th>
+                    <th>active</th>
+                    <th>action</th>
+                </tr>
+            </thead>
+            <tbody id="userTable">
+                
+            </tbody>
+        </table>
+    </div>
+
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="api/api.js"></script>
+    </html>
