@@ -33,4 +33,7 @@ Route::prefix('v1')->controller(UserController::class)
 
     //delete data
     Route::delete('/users/{user}','destroy');
+
+    //udpate data
+    Route::put('/users/{user}','update');
 });

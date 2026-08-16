@@ -92,4 +92,42 @@ class UserController extends Controller
             ],500);
         }
     }
+    public function update(Request $request,$user){
+        try{
+            $userid = User::find($user);
+            if(!$userid){
+                return response()->json([
+                    'message' => 'bad request missing id',
+                    'data' => null
+                ],400);
+            }
+
+            $validated = $request->validate([
+                'name' => ['required','string','max:255'],
+                'email'=> ['required','email','unique:users,email'],
+                'password' => ['required','string','min:6'],
+                'role'  => ['string',Rule::in(['admin','hr','employee'])],
+                'status' => ['string',Rule::in(['active','inactive'])]
+            ]);
+            if(isset($validated['password'])){
+                $validated['password'] = Hash::make($validated['password']);
+            }else{
+                unset($validated['password']); // old password
+            }
+            $user =  $userid->update($validated);
+
+            return response()->json([
+                'message' => 'Update user successfully',
+                'status'  => true,
+                'data'    => $user
+            ],201);
+
+        }catch(\Exception $e){
+            return response()->json([
+                'message' => 'update not found',
+                'status'  => false,
+                'data'    => null
+            ],500);
+        }
+    }
 }
